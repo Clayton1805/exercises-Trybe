@@ -1,0 +1,1 @@
+console.log("Valor menor que 20");

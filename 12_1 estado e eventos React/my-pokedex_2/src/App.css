@@ -1,0 +1,30 @@
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.pokemon {
+  background-color: aqua;
+  display: flex;
+  margin: 5px;
+  border-radius: 10px;
+  /* text-align: center; */
+  justify-content: space-around;
+  flex-grow: 1;
+  flex-basis: 25%;
+  border: 1px solid gray;
+}
+
+p, h1{
+  text-align: center;
+}
+
+.pokemon-txt {
+  white-space: nowrap;
+  padding: 0px 5px;
+}
+
+/* .pokemon-img {
+
+} */

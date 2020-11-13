@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Redux basic example</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  <!-- só estou usando html para poder importar o redux sem dor de cabeça -->
+</head>
+
+<body>
+  <div>
+    <!-- Redux: Use uma instrução Switch para lidar com várias ações
+Você pode dizer ao Redux store como lidar com vários tipos de ação. Digamos que você esteja gerenciando a autenticação do usuário em sua loja Redux. Você deseja ter uma representação de estado para quando os usuários estão conectados e quando estão desconectados. Você representa isso com um único objeto de estado com a propriedade authenticated. Você também precisa de criadores de ação que criam ações correspondentes ao login e logout do usuário, junto com os próprios objetos de ação.
+
+O editor de código tem uma loja, ações e criadores de ação configurados para você. Preencha a reducerfunção para lidar com várias ações de autenticação. Use uma switchinstrução JavaScript no reducerpara responder a diferentes eventos de ação. Este é um padrão padrão na escrita de redutores Redux. A instrução switch deve ser alternada action.typee retornar ao estado de autenticação apropriado.
+
+Nota:  neste ponto, não se preocupe com a imutabilidade do estado, uma vez que é pequeno e simples neste exemplo. Para cada ação, você pode retornar um novo objeto - por exemplo {authenticated: true},. Além disso, não se esqueça de escrever um defaultcaso em sua instrução switch que retorne o atual state. Isso é importante porque, uma vez que seu aplicativo tem vários redutores, eles são executados sempre que um despacho de ação é feito, mesmo quando a ação não está relacionada a esse redutor. Nesse caso, você deseja certificar-se de que retornou a corrente state.
+
+Passed
+Chamar a função loginUserdeve retornar um objeto com a propriedade type definida para a string LOGIN.
+
+Passed
+Chamar a função logoutUserdeve retornar um objeto com a propriedade type definida para a string LOGOUT.
+
+Passed
+O armazenamento deve ser inicializado com um objeto com uma authenticatedpropriedade definida como false.
+
+Passed
+O despacho loginUserdeve atualizar a authenticatedpropriedade no estado da loja para true.
+
+Passed
+O despacho logoutUserdeve atualizar a authenticatedpropriedade no estado da loja para false.
+
+Passed
+A authReducerfunção deve lidar com vários tipos de ação com uma switchinstrução. -->
+  </div>
+  <script>
+    const defaultState = {
+        authenticated: false
+    };
+
+    const authReducer = (state = defaultState, action) => {
+    // Change code below this line
+    switch(action.type) {
+        case 'LOGIN':
+            return { authenticated: true };
+        case 'LOGOUT':
+            return { authenticated: false };
+        default:
+            return state;
+    }
+    // Change code above this line
+    };
+
+    const store = Redux.createStore(authReducer);
+
+    const loginUser = () => {
+        return {
+            type: 'LOGIN'
+        }
+    };
+
+    const logoutUser = () => {
+        return {
+            type: 'LOGOUT'
+        }
+    };
+  </script>
+</body>
+
+</html>

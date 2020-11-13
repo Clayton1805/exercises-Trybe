@@ -1,0 +1,1 @@
+var picker = new Pikaday({ field: $('#DataInicio')[0] });
